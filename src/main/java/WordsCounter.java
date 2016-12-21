@@ -43,7 +43,11 @@ public class WordsCounter
 
     private void printTopOccurrences(List<String> sortedList, int sizeOfTop) {
 	System.out.println("Top " + sizeOfTop + " occurrences: ");
-	for (int i = 0; i < sizeOfTop && i < sortedList.size(); i++) {
+	if (sizeOfTop > sortedList.size()) {
+	    sizeOfTop = sortedList.size();
+	}
+
+	for (int i = 0; i < sizeOfTop; i++) {
 	    System.out.println(sortedList.get(i));
 	}
     }
